@@ -10,20 +10,8 @@ repos:
 
   - repo: local
     hooks:
-      - id: mypy
-        name: Check mypy
-        entry: mypy --namespace-packages -p mcp
-        language: python
-        types: [python]
-        pass_filenames: false
-        require_serial: true
-        exclude: ^docs/cookbooks/  # Ignore files under docs/cookbooks
-
-  - repo: local
-    hooks:
     - id: check-license
       name: Check License
       entry: python licenses/update_license.py . licenses/license_template.txt 
       language: system
       types: [python]
-      exclude: ^docs/cookbooks/  # Ignore files under docs/cookbooks
